@@ -230,9 +230,11 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+
   devise (~> 4.8)
   dotenv-rails (~> 2.8)
   faker (~> 3.0)
+
   importmap-rails
   jbuilder
   pg (~> 1.1)

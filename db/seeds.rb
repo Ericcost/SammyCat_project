@@ -6,13 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-picture = "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"
 
 20.times do 
     Item.create!(
-        title: Faker::Lorem.sentence(word_count: 2),
+        title: Faker::Lorem.sentence(number: 1),
         description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
-        price: Faker::Number.number(digits: 2),
-        image_url: picture
-        )
+        price: Faker::Number.decimal(l_digits: 2),
+        image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['cats'])
 end
