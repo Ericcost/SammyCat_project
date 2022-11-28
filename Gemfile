@@ -71,4 +71,8 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'faker'
+gem "faker", "~> 3.0"
+gem "dotenv-rails", "~> 2.8"
+gem "devise", "~> 4.8"
+gem "stripe", "~> 8.0"
+
