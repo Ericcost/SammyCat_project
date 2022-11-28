@@ -466,3 +466,34 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 224ms (Views: 197.8ms | ActiveRecord: 9.5ms | Allocations: 61308)
 
 
+Started GET "/" for ::1 at 2022-11-28 11:54:07 +0100
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 5775)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 19556)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 5.4ms | Allocations: 21061)
+
+
