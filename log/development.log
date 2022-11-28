@@ -40,3 +40,429 @@ Migrating to DeviseCreateUsers (20221128095709)
   [1m[35m (4.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Voluptatem voluptas."], ["description", "Suscipit dicta quia. Delectus praesentium adipisci. Veniam delectus sit. Perspiciatis eos porro. Ab quod dignissimos. Cum est consequatur. Aliquam autem possimus. Eligendi quia iure. Ducimus id et. Illum minima ut. Voluptatem quia mollitia. Eius aspernatu."], ["price", "62.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:29.981323"], ["updated_at", "2022-11-28 10:36:29.981323"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dolor inventore."], ["description", "Consequatur omnis temporibus. Rerum esse est. Qui dolore id. Ut qui sit. Expedita fuga corporis. Ea dolorem aliquid. Debitis excepturi laborum. Cumque minima ut. Inventore sit animi. Quae et est. Quisquam quia accusantium. Asperiores voluptas molestias. R."], ["price", "33.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:29.993469"], ["updated_at", "2022-11-28 10:36:29.993469"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Vel est."], ["description", "At ut hic. Mollitia est ducimus. Laudantium delectus cum. Laborum aut sed. Dolore modi vel. Optio qui voluptatem. Voluptatibus dicta voluptate. Iure maiores reiciendis. Eum excepturi velit. Quis quia est. Occaecati quo voluptatibus. Et dignissimos pariatu."], ["price", "58.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.002444"], ["updated_at", "2022-11-28 10:36:30.002444"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sed quo."], ["description", "Ut error tenetur. Modi libero et. Quasi sit qui. Perferendis impedit tempore. Corporis laudantium sit. Et est sint. Cupiditate qui excepturi. Ea expedita debitis. Facilis consequatur voluptatem. Enim iste sed. Nihil sint quo. Atque nobis quia. Officiis ve."], ["price", "85.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.012379"], ["updated_at", "2022-11-28 10:36:30.012379"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Molestiae excepturi."], ["description", "Harum eius earum. Unde quia maiores. Omnis voluptatum sunt. Quod iusto temporibus. Praesentium est totam. Voluptatibus ea dolore. Modi a autem. Eos voluptates omnis. Aliquid dolorem ipsa. Possimus velit assumenda. Modi voluptatem eos. Praesentium sunt lib."], ["price", "80.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.022079"], ["updated_at", "2022-11-28 10:36:30.022079"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Magnam ducimus."], ["description", "Qui eligendi nemo. Neque suscipit ad. Minus et distinctio. Expedita sed necessitatibus. Non repellat optio. Asperiores est deleniti. Nihil rem consequatur. Est non id. Veniam quis sequi. Nihil et vel. Dolorum qui sint. Modi alias molestias. Et ut qui. Mag."], ["price", "94.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.031294"], ["updated_at", "2022-11-28 10:36:30.031294"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nulla qui."], ["description", "Accusantium officiis enim. Odit unde numquam. Laborum asperiores rem. Qui quo voluptatem. Minus adipisci voluptas. Asperiores fugiat omnis. Esse voluptas impedit. Impedit ut aut. Quo aut voluptatem. Sit et quae. Ratione et vero. Necessitatibus velit at. N."], ["price", "98.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.041011"], ["updated_at", "2022-11-28 10:36:30.041011"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Numquam nam."], ["description", "Dolores non quos. Veniam nostrum autem. Laudantium ab et. Optio omnis excepturi. Nam porro qui. Ullam nam corrupti. Aut libero officia. Ea tempora porro. Rerum voluptatem corrupti. Ipsa voluptatum minus. Quaerat rerum qui. Corrupti quasi beatae. Repellend."], ["price", "19.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.049182"], ["updated_at", "2022-11-28 10:36:30.049182"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sunt aspernatur."], ["description", "Ut non laborum. Voluptates qui aut. Rerum in sed. Non velit sed. Nemo aliquid aspernatur. Commodi velit voluptatibus. Earum laudantium non. Reiciendis quisquam voluptates. Dolores autem voluptas. Neque sit nesciunt. Odio exercitationem nobis. Vitae id ver."], ["price", "29.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.058158"], ["updated_at", "2022-11-28 10:36:30.058158"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ut sunt."], ["description", "Itaque tempora eveniet. Similique sapiente et. Consequatur velit molestiae. Quod modi est. Sapiente quia enim. Magni tempora error. Architecto repellendus aspernatur. Hic mollitia molestias. Qui eligendi molestiae. Saepe et doloribus. Sit labore voluptas.."], ["price", "22.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.068218"], ["updated_at", "2022-11-28 10:36:30.068218"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Aut ut."], ["description", "Laborum nisi eligendi. Quas id aperiam. Ut est aut. Illum repellendus et. Veniam tenetur laborum. Quis esse alias. Perspiciatis quasi rerum. Minus soluta iste. Occaecati voluptatem aut. Ex ut recusandae. Id neque saepe. Tempora quaerat ut. Culpa sed rerum."], ["price", "72.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.077404"], ["updated_at", "2022-11-28 10:36:30.077404"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Excepturi id."], ["description", "Rem eligendi maiores. Aut rerum perspiciatis. Earum rerum dolore. Magni magnam tempore. Dolorum quam dolores. Corporis unde nam. Perspiciatis magnam dolorem. Doloribus laborum dolorum. Nemo quae deleniti. Suscipit accusamus odit. Occaecati nihil illo. Dig."], ["price", "93.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.086936"], ["updated_at", "2022-11-28 10:36:30.086936"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Quas vel."], ["description", "Ea in distinctio. Rerum voluptatem deleniti. Exercitationem aut quis. Fugiat et placeat. Suscipit sapiente culpa. Est laboriosam harum. Saepe quia aliquam. Quia ipsum sit. Velit consequatur ad. Et dolorem qui. Eligendi non ut. Aliquam et harum. Quas cum e."], ["price", "17.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.095504"], ["updated_at", "2022-11-28 10:36:30.095504"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Provident praesentium."], ["description", "Minima deserunt nisi. Eius id sint. Aut praesentium omnis. Velit quidem nesciunt. Atque ut ut. Libero rerum quia. Veritatis laborum sit. Sit iure commodi. Ut est autem. Et voluptatem commodi. Et voluptas repellat. Blanditiis at quasi. Facere minima ipsam.."], ["price", "62.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.107117"], ["updated_at", "2022-11-28 10:36:30.107117"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.7ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ipsa dolores."], ["description", "Sapiente voluptas suscipit. Nemo aspernatur est. Suscipit omnis mollitia. Voluptatibus animi rerum. Dolores non velit. Aut aut corrupti. Odio est nesciunt. Eius voluptas consectetur. Ipsum iste nostrum. Ex repellendus reprehenderit. Nihil aliquam labore. ."], ["price", "68.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.117939"], ["updated_at", "2022-11-28 10:36:30.117939"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Consequatur quia."], ["description", "Natus aut sit. Nesciunt nihil excepturi. Officia eum et. Amet laudantium consequatur. Labore dicta magni. Est eius qui. Nesciunt eveniet ratione. Placeat ad dolores. Ipsum ullam consectetur. Blanditiis consequatur aut. Quidem numquam rerum. Beatae qui rer."], ["price", "11.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.131749"], ["updated_at", "2022-11-28 10:36:30.131749"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sed odio."], ["description", "Itaque rerum et. Dicta iusto culpa. Vel iusto maxime. Nisi amet laboriosam. Aut doloremque eveniet. Illum voluptates consectetur. Totam facere praesentium. Dolore qui quis. Ut non quo. Dolores voluptates et. Beatae mollitia voluptas. Dignissimos nulla in.."], ["price", "70.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.144893"], ["updated_at", "2022-11-28 10:36:30.144893"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ut assumenda."], ["description", "Nisi perferendis saepe. Aut voluptas nulla. Dignissimos aut eum. Exercitationem voluptate laudantium. Nihil doloremque doloribus. Quia iure voluptates. Molestiae fuga tempore. Facere ipsam perspiciatis. Eum aliquid sed. Odit sed quod. Iste dolorum adipisc."], ["price", "18.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.156426"], ["updated_at", "2022-11-28 10:36:30.156426"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Praesentium aspernatur."], ["description", "Illo quia quo. Repellendus rerum qui. Quos voluptatem doloribus. Odit ducimus doloremque. Atque tempora quia. Et vero deserunt. Minima fugiat culpa. Ut quo sed. Doloribus quia similique. Rerum voluptatum et. Et est similique. Molestiae modi asperiores. Co."], ["price", "87.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.166424"], ["updated_at", "2022-11-28 10:36:30.166424"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Vero magni."], ["description", "Consectetur vero molestiae. Ipsum recusandae assumenda. Itaque vitae ut. Quo autem ea. Expedita vel rem. Quisquam nihil tempore. Quo voluptatem at. Esse sed dolor. Aut eveniet est. Vel dolore earum. Excepturi necessitatibus enim. Aut consequuntur optio. E."], ["price", "68.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 10:36:30.177414"], ["updated_at", "2022-11-28 10:36:30.177414"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Started GET "/" for ::1 at 2022-11-28 11:37:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric-developer/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric-developer/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.7ms | Allocations: 729)
+Completed 200 OK in 36ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 7047)
+
+
+Started GET "/" for ::1 at 2022-11-28 11:37:10 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/eric-developer/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/eric-developer/.rvm/gems/ruby-3.0.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 353)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1219)
+
+
+Started GET "/item" for ::1 at 2022-11-28 11:37:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/item"):
+  
+Started GET "/items" for ::1 at 2022-11-28 11:37:57 +0100
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 1.1ms | Allocations: 293)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/index.html.erb within layouts/application (Duration: 58.5ms | Allocations: 20755)
+  Rendered layout layouts/application.html.erb (Duration: 655.1ms | Allocations: 109868)
+Completed 200 OK in 669ms (Views: 658.1ms | ActiveRecord: 5.3ms | Allocations: 111692)
+
+
+Started GET "/items/1" for ::1 at 2022-11-28 11:38:00 +0100
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:63:in `set_item'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered items/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 821)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2988)
+Completed 200 OK in 20ms (Views: 10.7ms | ActiveRecord: 0.7ms | Allocations: 5847)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Magnam non."], ["description", "Non optio quam. Voluptatem ut odio. Quo ipsa ratione. Exercitationem magnam voluptatem. Eveniet sed aut. Possimus earum repudiandae. Et qui odio. Dolores eaque odio. Et non a. Doloremque non corrupti. Quibusdam asperiores consequuntur. Vitae adipisci null."], ["price", "76.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.916122"], ["updated_at", "2022-11-28 10:46:52.916122"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Autem tenetur."], ["description", "Est ducimus consequatur. Explicabo voluptates illo. Omnis doloremque molestias. Fuga repellendus est. Adipisci sed nam. Alias voluptates nihil. Doloremque officia id. Et dolorem consequatur. Eum ab adipisci. Est deleniti quia. Explicabo corporis nemo. Qua."], ["price", "56.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.927049"], ["updated_at", "2022-11-28 10:46:52.927049"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Eum omnis."], ["description", "Aut voluptatem nemo. Sed et qui. Ipsa voluptas reprehenderit. Voluptates eveniet vitae. Incidunt nisi ipsam. Autem quia impedit. Molestiae esse et. Reiciendis eaque non. Dolor mollitia qui. Deleniti saepe cupiditate. Quia molestiae voluptate. Voluptatum a."], ["price", "42.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.937542"], ["updated_at", "2022-11-28 10:46:52.937542"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ipsa aliquid."], ["description", "Et dolor autem. Consequatur sequi consequatur. Quia soluta et. Et quis vel. Nihil laborum vel. Praesentium expedita corporis. Quis fugit vero. Quidem et quaerat. Alias rerum nemo. Exercitationem sint laboriosam. Assumenda officia et. Doloremque temporibus."], ["price", "38.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.946730"], ["updated_at", "2022-11-28 10:46:52.946730"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nulla fuga."], ["description", "Rerum repellendus ex. Omnis velit accusamus. Quae ut non. Dicta eligendi saepe. Iure ut nisi. Veritatis maiores ipsam. Praesentium qui et. Rerum et voluptates. Necessitatibus quidem in. Tempora dolor qui. Quia veritatis assumenda. Voluptatem quaerat et. D."], ["price", "72.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.954916"], ["updated_at", "2022-11-28 10:46:52.954916"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Autem earum."], ["description", "Maiores iure quo. Sit ut ut. Quas aut autem. Quas recusandae sapiente. Occaecati deleniti provident. Totam maxime delectus. Est incidunt ipsam. Voluptate nulla ipsa. At aut doloribus. Laboriosam quia perferendis. Accusantium dolores itaque. Aspernatur iur."], ["price", "42.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.963245"], ["updated_at", "2022-11-28 10:46:52.963245"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Optio rem."], ["description", "Sit quibusdam minima. Pariatur vitae excepturi. Odio quo eius. Cum sit voluptatem. Facilis voluptatibus eos. Qui facere temporibus. Vero sed eos. Veniam animi quo. Distinctio exercitationem error. Atque et ea. Placeat et eum. Aliquam omnis doloremque. Aut."], ["price", "53.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.971531"], ["updated_at", "2022-11-28 10:46:52.971531"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Fugit ipsa."], ["description", "Autem blanditiis assumenda. Non impedit quod. Molestiae enim est. Nisi molestias quis. Eveniet neque modi. At ab natus. Amet enim voluptates. Ratione qui molestiae. Tempore perspiciatis iure. Quidem a sed. Sit quas nam. Ipsum voluptas et. Aperiam aut nisi."], ["price", "98.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.983772"], ["updated_at", "2022-11-28 10:46:52.983772"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Possimus facilis."], ["description", "Omnis magni vitae. Dolorem quasi voluptate. Minus dignissimos laboriosam. Perferendis consequuntur ea. Aut velit et. Sequi voluptatem sit. Sint odit voluptas. Consequatur molestias est. Nam iste sit. Odio eos sint. Eaque est rerum. Laborum accusamus sed. ."], ["price", "77.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:52.993672"], ["updated_at", "2022-11-28 10:46:52.993672"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dolor perspiciatis."], ["description", "Veniam beatae quam. Atque maiores odio. Quos et quo. Dolor quae rerum. Dolores consequuntur dolor. Incidunt qui at. Repudiandae nihil architecto. Voluptates natus magni. Est ut magni. Quia odit maiores. Veritatis voluptatem numquam. Dolorem non numquam. A."], ["price", "73.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.003276"], ["updated_at", "2022-11-28 10:46:53.003276"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Voluptas pariatur."], ["description", "Expedita veniam corrupti. Alias suscipit sapiente. Inventore sint consequatur. Doloribus sint non. Culpa dolorem quia. Id ut sunt. Est animi maiores. Iste ut et. Repellat est facere. Nobis fugit vel. Illum alias ipsam. Cum commodi tempora. Et consequatur ."], ["price", "10.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.011681"], ["updated_at", "2022-11-28 10:46:53.011681"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Doloremque consequatur."], ["description", "Libero est placeat. Aut dolores ab. Eaque ipsa dignissimos. Necessitatibus voluptatum ut. Qui sapiente aut. Commodi qui sed. Laborum recusandae sed. Totam consequuntur aspernatur. Excepturi totam quam. Quos cumque non. Minima sit qui. Et consectetur magni."], ["price", "83.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.020429"], ["updated_at", "2022-11-28 10:46:53.020429"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Aut laborum."], ["description", "Aut molestias dignissimos. Libero esse velit. Laboriosam explicabo atque. Qui voluptas porro. Dignissimos rerum nisi. Eaque voluptas et. Voluptatibus facere accusamus. Rerum odit rerum. Veniam pariatur incidunt. Sint recusandae voluptate. Doloribus aliqui."], ["price", "96.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.028024"], ["updated_at", "2022-11-28 10:46:53.028024"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Magni repudiandae."], ["description", "Aut reprehenderit in. Perspiciatis sequi velit. Porro temporibus ut. Nobis aut deleniti. Sapiente distinctio et. Et ut sed. Voluptatem quibusdam beatae. Dicta hic sint. Rem adipisci quas. Dolorem laboriosam iusto. Natus in maxime. Soluta minima qui. Id fu."], ["price", "48.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.038397"], ["updated_at", "2022-11-28 10:46:53.038397"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Voluptatem dolor."], ["description", "Est dolorem odio. Deserunt qui adipisci. Delectus necessitatibus quas. Alias animi voluptas. Qui esse dolor. Libero facilis doloremque. Optio rerum minima. Qui quos dolorem. Sint ullam inventore. Ratione commodi non. Rerum voluptatem est. Eos nemo illo. F."], ["price", "54.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.047868"], ["updated_at", "2022-11-28 10:46:53.047868"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Beatae totam."], ["description", "Reiciendis voluptatum sed. Adipisci reiciendis qui. Consectetur ad tempore. Sed neque aut. Quod quaerat ipsa. Sed iure est. Ut et qui. Quaerat velit maiores. Similique accusantium illum. Est corrupti quia. Dolore vitae ipsum. Molestiae repellendus eum. Au."], ["price", "77.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.057969"], ["updated_at", "2022-11-28 10:46:53.057969"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Voluptatem in."], ["description", "Voluptatum placeat cumque. Provident quos dolores. In et nisi. Culpa est et. In doloribus vel. Quo necessitatibus temporibus. Ab cumque expedita. Necessitatibus assumenda dicta. Nihil error laborum. Hic quis ut. Sunt et autem. Blanditiis debitis nihil. Su."], ["price", "23.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.068209"], ["updated_at", "2022-11-28 10:46:53.068209"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Et provident."], ["description", "Quis aut quia. Fugit repellendus inventore. Consequatur similique sit. Omnis cum ducimus. Ex velit nobis. Pariatur labore modi. Fugit repellat occaecati. Qui nulla at. Aut dignissimos molestias. Est dolores voluptas. Id omnis qui. Dolorem molestiae id. So."], ["price", "97.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.076602"], ["updated_at", "2022-11-28 10:46:53.076602"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Qui incidunt."], ["description", "In odio omnis. Ducimus laboriosam molestiae. Quos amet in. Magnam atque dolorem. Amet incidunt quo. Eaque laudantium deleniti. Adipisci enim nam. Itaque voluptatem dolores. Sapiente deserunt ex. Corporis nam doloribus. Animi vel eaque. Sint nulla quae. Ex."], ["price", "88.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.086698"], ["updated_at", "2022-11-28 10:46:53.086698"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Iste voluptates."], ["description", "Voluptatem qui ut. Sit dolores incidunt. Ut nobis eligendi. Libero ratione velit. Voluptate aliquam vero. Unde vitae blanditiis. Magnam nulla voluptatem. Quisquam provident nam. Provident quis dolor. Consequuntur ab odio. Numquam distinctio non. Fuga faci."], ["price", "31.0"], ["image_url", "[\"https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400\"]"], ["created_at", "2022-11-28 10:46:53.096980"], ["updated_at", "2022-11-28 10:46:53.096980"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/items" for ::1 at 2022-11-28 11:47:00 +0100
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.4ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/index.html.erb within layouts/application (Duration: 60.2ms | Allocations: 9360)
+  Rendered layout layouts/application.html.erb (Duration: 64.7ms | Allocations: 11547)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 10.2ms | Allocations: 11870)
+
+
+Started GET "/items" for ::1 at 2022-11-28 11:47:03 +0100
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (3.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.6ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.4ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/index.html.erb within layouts/application (Duration: 46.9ms | Allocations: 6442)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 8629)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 3.8ms | Allocations: 8954)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (5009.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (20.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_development"[0m
+  [1m[35m (26.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_test"[0m
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20221128094001)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (5.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128094001"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20221128095709)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128095709"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-28 10:49:33.559136"], ["updated_at", "2022-11-28 10:49:33.559136"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Distinctio veniam."], ["description", "Quis suscipit nam. Voluptas possimus dolorem. Qui doloremque rerum. Et eius libero. In quam ut. Qui placeat voluptatibus. Consequatur fuga possimus. Veniam deserunt aut. Veniam impedit pariatur. Quis vitae sequi. Harum excepturi placeat. Sed vitae cumque.."], ["price", "99.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.072006"], ["updated_at", "2022-11-28 10:49:34.072006"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Nam numquam."], ["description", "Neque maxime sunt. Aut dolores nisi. Et dolor molestiae. Est facilis fugit. Rerum quidem aut. Quos non exercitationem. In quisquam fugiat. Perferendis excepturi et. Qui rerum recusandae. At recusandae accusamus. Rerum qui magni. Consequatur reprehenderit ."], ["price", "60.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.081689"], ["updated_at", "2022-11-28 10:49:34.081689"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Veniam sint."], ["description", "Ipsum pariatur voluptas. Dolorem nemo labore. Ut sequi dolores. Molestiae optio hic. Qui nam repudiandae. Quo rerum maiores. Voluptatem in ad. Assumenda aspernatur consequuntur. Blanditiis ea architecto. Et explicabo et. Dolore libero quam. Voluptas ut do."], ["price", "32.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.091554"], ["updated_at", "2022-11-28 10:49:34.091554"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sint doloribus."], ["description", "Dolores aut facilis. Qui vel ab. Aliquid vel consequatur. Temporibus suscipit quis. Ut facere et. Officiis dolorem quam. Et in non. Dolore ut sequi. Voluptas minus ab. Temporibus pariatur consequatur. A ratione iure. Error nesciunt eos. Nihil laboriosam c."], ["price", "78.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.100945"], ["updated_at", "2022-11-28 10:49:34.100945"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Optio qui."], ["description", "Ullam voluptatum recusandae. Fugit ut mollitia. Nisi et saepe. Id quis dolor. Ea nemo rerum. Aspernatur ipsum et. Ea aut esse. Qui fugit nisi. Dolor beatae aspernatur. Autem aut eaque. Quidem voluptatem quia. Quis voluptatem qui. Maxime ratione ut. Sed qu."], ["price", "63.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.109364"], ["updated_at", "2022-11-28 10:49:34.109364"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Laboriosam sed."], ["description", "Consequatur voluptatum asperiores. Est qui aut. Itaque consectetur iusto. Rerum enim voluptatem. Velit perferendis porro. Vel pariatur culpa. Quo voluptatem nostrum. Non minima perferendis. Ut doloremque aut. Sapiente quia qui. Numquam molestiae exercitat."], ["price", "11.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.118768"], ["updated_at", "2022-11-28 10:49:34.118768"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dolorem error."], ["description", "Molestiae excepturi pariatur. Reiciendis aut commodi. Repellendus temporibus molestiae. Accusantium id nobis. Placeat quaerat doloribus. Architecto vel deleniti. Et maxime doloribus. Dolore vero quod. Laboriosam omnis totam. Architecto non autem. Unde ani."], ["price", "26.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.125600"], ["updated_at", "2022-11-28 10:49:34.125600"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Distinctio fugiat."], ["description", "Laboriosam dignissimos totam. Totam consequatur doloremque. Dolore fuga assumenda. Quod reprehenderit illo. Hic veniam omnis. Illum ea quia. Ipsam numquam nulla. At quae et. Tempore autem omnis. Voluptas voluptatem sed. Hic quas nostrum. Magnam et consequ."], ["price", "21.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.134707"], ["updated_at", "2022-11-28 10:49:34.134707"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Suscipit non."], ["description", "Omnis similique aut. Omnis deleniti vitae. Aliquam accusamus et. Itaque dolores et. Dicta et optio. Fuga voluptatem id. Reiciendis non dolores. Mollitia ut autem. Odit itaque in. Non nisi quasi. Quidem dolorem aut. Delectus fuga sit. Consequatur ut asperi."], ["price", "99.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.144363"], ["updated_at", "2022-11-28 10:49:34.144363"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ipsum eum."], ["description", "Sed voluptate provident. Exercitationem eveniet nisi. Aut enim et. Enim iste consequatur. Quis molestias cupiditate. Mollitia odio similique. Dolorem ipsam commodi. Nostrum ut et. Voluptatum aut qui. Fugit beatae et. Porro recusandae cum. Aut aliquid aliq."], ["price", "98.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.153232"], ["updated_at", "2022-11-28 10:49:34.153232"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Voluptatum nesciunt."], ["description", "Ipsa beatae iure. Dolor alias dolores. Et ut voluptatem. Enim quia odio. Vitae qui maiores. Dolores harum in. Voluptate ipsum odit. Ut quia et. Rerum qui eligendi. Voluptas nobis id. Assumenda qui et. Quia in quia. Qui odit officiis. Nemo magnam ad. Nisi ."], ["price", "15.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.160743"], ["updated_at", "2022-11-28 10:49:34.160743"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Et sit."], ["description", "Voluptatum est alias. Delectus reiciendis sed. Omnis aut est. Ad aut blanditiis. Perspiciatis tempore officia. Velit officiis architecto. Qui voluptas non. Est optio odio. At vitae voluptatum. Repellat beatae et. Totam quasi sit. Inventore totam nihil. Re."], ["price", "43.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.169191"], ["updated_at", "2022-11-28 10:49:34.169191"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Qui nisi."], ["description", "Voluptatibus corporis atque. Tenetur velit voluptatem. Non dolorem tempore. Ducimus et nihil. Voluptates facere voluptatem. Ea et suscipit. Molestias ipsam nostrum. Quia ipsum qui. Voluptas illo culpa. Sunt laudantium qui. Magnam sunt consequatur. Nostrum."], ["price", "22.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.177742"], ["updated_at", "2022-11-28 10:49:34.177742"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Illo at."], ["description", "Animi ratione sunt. Cupiditate suscipit nemo. Consequatur quis blanditiis. Qui exercitationem doloribus. Hic iure deserunt. Repudiandae qui dolorum. Unde fugit rerum. Sed necessitatibus delectus. Ut earum dolores. Nulla quia nihil. Sapiente similique dese."], ["price", "51.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.187246"], ["updated_at", "2022-11-28 10:49:34.187246"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sint accusamus."], ["description", "Nobis aut tempore. Odio porro sit. Error distinctio quia. Consequatur velit quaerat. Aliquid qui non. Neque sequi odio. Laboriosam velit dolorem. Ut natus voluptate. Non tempore iste. Non debitis autem. Et similique a. Occaecati vitae qui. Eos ut et. Libe."], ["price", "46.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.197423"], ["updated_at", "2022-11-28 10:49:34.197423"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Excepturi accusantium."], ["description", "Omnis voluptatibus deleniti. Autem quas voluptatibus. Quisquam quis architecto. Voluptas laudantium ut. Exercitationem mollitia odit. Molestiae pariatur commodi. Est commodi eos. Blanditiis ut quasi. Aut velit voluptatem. Sed dolores et. Rerum sint non. U."], ["price", "37.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.207284"], ["updated_at", "2022-11-28 10:49:34.207284"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sint rem."], ["description", "Consectetur eum veniam. Nam et voluptatibus. Unde voluptatem voluptatem. Eligendi exercitationem doloremque. Tenetur totam et. Delectus ratione qui. Nihil harum nulla. Expedita rem dolorem. Rerum ducimus dolorum. Fugiat quod placeat. Rerum in unde. Aperia."], ["price", "45.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.214633"], ["updated_at", "2022-11-28 10:49:34.214633"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Aut minus."], ["description", "Ipsum qui repudiandae. Porro libero saepe. Quibusdam voluptate voluptatem. Laboriosam voluptas alias. Unde labore iure. Tenetur unde voluptatem. Ut sint quibusdam. Et in magnam. Libero repudiandae suscipit. Dolorem ab dolor. Molestiae enim veniam. Tenetur."], ["price", "36.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.223239"], ["updated_at", "2022-11-28 10:49:34.223239"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Quasi consequatur."], ["description", "Quibusdam voluptatem vel. Aliquam praesentium laudantium. Aut fuga eius. Esse velit quaerat. Ad molestias aliquid. Corrupti quo est. Velit eum tempora. Eveniet aut enim. Fugit quo nihil. Ea amet quo. Dolore incidunt distinctio. Libero nulla eum. Et est eu."], ["price", "19.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.231593"], ["updated_at", "2022-11-28 10:49:34.231593"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Est non."], ["description", "Ut quia eum. In dolores amet. Illum ut soluta. Temporibus est ullam. Ab vitae velit. Quia aut tempore. Sed inventore numquam. Accusamus expedita nihil. Esse doloremque occaecati. Voluptas et consequatur. Quisquam laboriosam debitis. Animi consequuntur quo."], ["price", "32.0"], ["image_url", "https://images.pexels.com/photos/320014/pexels-photo-320014.jpeg?auto=compress&cs=tinysrgb&w=400"], ["created_at", "2022-11-28 10:49:34.240483"], ["updated_at", "2022-11-28 10:49:34.240483"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/items" for ::1 at 2022-11-28 11:49:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 1.4ms | Allocations: 306)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 28)
+  Rendered items/_item.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered items/index.html.erb within layouts/application (Duration: 80.6ms | Allocations: 21204)
+  Rendered layout layouts/application.html.erb (Duration: 195.5ms | Allocations: 55223)
+Completed 200 OK in 224ms (Views: 197.8ms | ActiveRecord: 9.5ms | Allocations: 61308)
+
+
