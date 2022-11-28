@@ -1,5 +1,13 @@
 class Item < ApplicationRecord
 
+has_many :join_table_cart_items
+has_many :carts, through: :join_table_cart_items
+has_many :users, through: :carts
+
+has_many :join_table_order_items
+has_many :orders, through: :join_table_order_items
+has_many :users, through: :join_table_order_items
+	
 validates :title,
   presence: true,
 	length: { in: 5..25 }
