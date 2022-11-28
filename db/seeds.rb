@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-20.times do 
-    Item.create!(
-        title: Faker::Lorem.sentence(number: 1),
-        description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
-        price: Faker::Number.decimal(l_digits: 2),
-        image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['cats'])
+20.times do
+	Item.create!(
+		title: Faker::Lorem.characters(number: rand(5..25)),
+		description: Faker::Lorem.sentence(word_count: rand(5..25)),
+		price: rand(0..100),
+		image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['cats']))
 end

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :join_table_cart_items, through: :cart
   has_many :items, through: :join_table_cart_items
   
-  has_many :orders, 
+  has_many :orders
   has_many :join_table_order_items, through: :orders
   has_many :items, through: :join_table_order_items
 end

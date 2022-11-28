@@ -497,3 +497,138 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 5.4ms | Allocations: 21061)
 
 
+  [1m[35m (201.6ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (104.6ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20221128094001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "image_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128094001"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20221128095709)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128095709"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCarts (20221128102311)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128102311"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to JoinTableCartItems (20221128102914)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "join_table_cart_items" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_cart_id" ON "join_table_cart_items" ("cart_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_item_id" ON "join_table_cart_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128102914"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20221128104419)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128104419"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to JoinTableOrderItems (20221128105012)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to JoinTableOrderItems (20221128105012)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to JoinTableOrderItems (20221128105012)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "join_table_order_items" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_cart_id" ON "join_table_order_items" ("cart_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_item_id" ON "join_table_order_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128105012"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-28 11:51:19.444042"], ["updated_at", "2022-11-28 11:51:19.444042"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (2.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "xcpv5jsrxrwg6yqyv"], ["description", "Qui maxime dicta ut error eaque et inventore veritatis et cum sunt sit dignissimos odio qui omnis et sed."], ["price", "60.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.717903"], ["updated_at", "2022-11-28 11:59:24.717903"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "j62enpnv6jrk2"], ["description", "Voluptate facere sint quas delectus velit qui aut ut laborum cupiditate nobis id minus aliquid neque corrupti quidem nihil iusto ea recusandae ut natus mollitia."], ["price", "36.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.722763"], ["updated_at", "2022-11-28 11:59:24.722763"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "1xuntp4ttg36vcwzy5"], ["description", "Unde dolor qui totam quo rem accusantium et qui dolores dolorem."], ["price", "71.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.724483"], ["updated_at", "2022-11-28 11:59:24.724483"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "4dt97n0qg22r3rjv"], ["description", "Repellat ad omnis quia laboriosam tempora voluptas illo."], ["price", "63.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.726229"], ["updated_at", "2022-11-28 11:59:24.726229"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "xqrxvbv43g0om6ulccqebkuh"], ["description", "Temporibus et unde ut rem inventore est et aut et ab in ad libero quis harum."], ["price", "77.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.727833"], ["updated_at", "2022-11-28 11:59:24.727833"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "hx7byktq"], ["description", "Ea corrupti odit debitis delectus ratione eum iste tempora molestiae labore qui atque quidem dolores."], ["price", "54.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.736629"], ["updated_at", "2022-11-28 11:59:24.736629"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "ifpoyc9c78y"], ["description", "Voluptatum dolore qui corporis beatae delectus non et cupiditate voluptatem repudiandae ratione odit error ut quos praesentium saepe qui eius eos et dolor necessitatibus modi."], ["price", "46.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.738689"], ["updated_at", "2022-11-28 11:59:24.738689"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "thpbrp"], ["description", "Labore ullam alias aut natus iure veniam qui recusandae nobis."], ["price", "22.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.740182"], ["updated_at", "2022-11-28 11:59:24.740182"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "m746qm9dxqdlgwmf"], ["description", "Consectetur tenetur natus qui qui ex doloremque architecto ut sit assumenda veritatis minima et quidem quo autem officiis blanditiis."], ["price", "53.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.741723"], ["updated_at", "2022-11-28 11:59:24.741723"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "s9k723xrvc9z4k3kwruetp"], ["description", "Molestiae sed nam doloribus nisi laudantium at sed impedit cumque repellat omnis doloremque officiis maxime est sit consequatur et recusandae minima nobis velit."], ["price", "81.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.743302"], ["updated_at", "2022-11-28 11:59:24.743302"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "l2z6bqe7imf5wje8zith677gr"], ["description", "Dolores atque quos illo in temporibus nihil pariatur adipisci voluptatum."], ["price", "78.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.745712"], ["updated_at", "2022-11-28 11:59:24.745712"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "ejjgxjne4akd"], ["description", "Aut corrupti ipsum deserunt quia beatae facere et quibusdam tenetur aspernatur nulla optio molestias ut ut consequatur ad voluptatem non neque."], ["price", "76.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.748460"], ["updated_at", "2022-11-28 11:59:24.748460"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "bqk04x3n610pmir8"], ["description", "Quisquam nesciunt sed et consequatur praesentium at."], ["price", "100.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.749961"], ["updated_at", "2022-11-28 11:59:24.749961"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "hzjbia00d"], ["description", "Sint sit ut beatae eos soluta a ipsam culpa non animi autem vero ducimus excepturi rerum doloremque ab omnis maxime exercitationem facilis sapiente iusto."], ["price", "65.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.751388"], ["updated_at", "2022-11-28 11:59:24.751388"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "feoth5r7wfyx79ygbl6poy11"], ["description", "Dolorem placeat quia iure molestiae non."], ["price", "91.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.752823"], ["updated_at", "2022-11-28 11:59:24.752823"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "37mn44cr2prifx5cybgvjb"], ["description", "Consequatur veniam doloribus enim est ut libero rerum."], ["price", "19.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.754340"], ["updated_at", "2022-11-28 11:59:24.754340"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "2f4v7f3amo27p0jxb"], ["description", "Fugiat recusandae quia occaecati ipsum non enim doloremque sapiente officiis et ut dignissimos similique provident molestiae nisi dolorem autem sed dolorem eum pariatur distinctio."], ["price", "8.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.755889"], ["updated_at", "2022-11-28 11:59:24.755889"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "esvyouh4lcza6bcvg"], ["description", "Ut placeat quisquam impedit aut."], ["price", "93.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.757416"], ["updated_at", "2022-11-28 11:59:24.757416"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "8jrajuindrxh1sniprxq9b"], ["description", "Non vero voluptates odit veniam sed et molestias rerum mollitia et quae unde et aut animi ratione itaque."], ["price", "85.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.758819"], ["updated_at", "2022-11-28 11:59:24.758819"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "lv3yb"], ["description", "Ea eaque animi necessitatibus accusantium."], ["price", "36.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["created_at", "2022-11-28 11:59:24.760185"], ["updated_at", "2022-11-28 11:59:24.760185"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
