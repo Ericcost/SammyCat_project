@@ -8,3 +8,8 @@
 
   <%= button_to "Destroy this cart", @cart, method: :delete %>
 </div>
+
+
+<% @cart_content.each do |item| %>
+<%= item.title %>
+<% end %>
