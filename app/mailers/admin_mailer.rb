@@ -1,2 +1,0 @@
-class AdminMailer < ApplicationMailer
-end
