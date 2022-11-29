@@ -14,7 +14,7 @@
 
       <nav class="navbar navbar-expand-lg bg-warning">
       <div class="container-fluid">
-        <%= link_to "The Event Project", root_path, class: 'navbar-brand font-monospace' %></a>
+        <%= link_to "Sammy'Shop", root_path, class: 'navbar-brand font-monospace' %></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,6 +44,11 @@
         </div>
       </div>
     </nav>
+
+    <% if current_user %>
+      <%= button_to "Panier", cart_path(current_user_cart.id), method: :get, class: 'btn btn-link nav-link' %></li>
+    <% end %>
+
 
     <%= render partial: "carts/cart" if @render_cart %>
     <%= yield %>
