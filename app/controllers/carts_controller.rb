@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :update, :destroy]
 
   # GET /carts or /carts.json
   def index
@@ -9,8 +9,14 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
-    @render_cart = false
-    @cart_content = Cart.find_by(user_id: current_user.id).items
+
+    unless @cart.id == current_user.cart.id
+      redirect_to root_path
+    else
+      @render_cart = false
+      @cart_content = current_user_cart_content
+    end
+
   end
 
   # GET /carts/new

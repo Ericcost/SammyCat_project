@@ -19,10 +19,10 @@ class JoinTableCartItemsController < ApplicationController
   
     # DELETE /orders/1 or /orders/1.json
     def destroy
-      @itemToAdd.destroy
+      @item_to_delete.destroy
   
       respond_to do |format|
-        format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
+        format.html { redirect_to carts_url, notice: "Successfully deleted." }
         format.json { head :no_content }
       end
     end

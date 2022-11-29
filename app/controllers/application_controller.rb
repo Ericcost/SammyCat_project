@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+
+  include CartsHelper
+  include JoinTableCartItemsHelper
+
   before_action :set_render_cart
   before_action :initialize_cart
 
