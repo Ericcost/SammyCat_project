@@ -1,18 +1,18 @@
+<h1 align="center">Sammy'Shop 🐱</h1>
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-
-<h1 align="center">Sammy'Shop 🐱</h1>
 
 Welcome to our [THP](https://www.thehackingproject.org) training project: creating an online store for selling cat pictures.
 
 ![alt text](https://cdn.discordapp.com/attachments/1030376579878096916/1046815408516235264/1669649329453.jpg)
 
-### 🌐 How to access
+### 🌐 - How to access
 
 ↳ [Sammy'Shop](https://sammy-cat.fly.dev/items) 
 
-### ✅ Features
+### ✅ - Features
 
 - As an authenticated user, I can place an order
 - As an admin, I can receive an email that notify me an order was made
@@ -35,7 +35,7 @@ Welcome to our [THP](https://www.thehackingproject.org) training project: creati
 - As an user, I can choose products categories
 An an user, I can buy several items of the same product
 
-### ⚙️ Local setup 
+### ⚙️ - Local setup 
 
 ``` Shell
 $ bundle install
@@ -51,7 +51,7 @@ $ rails server
 ```
 
 
-### 👨‍💻 Authors Details 
+### 👨‍💻 - Authors Details 
 
 - [@BenjaminCharmes 💸](https://github.com/BenjaminCharmes)
 - [@Ericcost 👨‍🔬](https://github.com/Ericcost)

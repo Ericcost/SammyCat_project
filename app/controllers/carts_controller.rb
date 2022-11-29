@@ -9,6 +9,8 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
+    @render_cart = false
+    @cart_content = Cart.find_by(user_id: current_user.id).items
   end
 
   # GET /carts/new
