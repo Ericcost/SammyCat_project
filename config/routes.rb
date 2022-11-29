@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'avatars/create'
   resources :orders
   resources :carts
   devise_for :users

@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_one_attached :avatar
   has_one :cart
   has_many :join_table_cart_items, through: :carts
   has_many :items, through: :join_table_cart_items
