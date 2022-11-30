@@ -7,7 +7,7 @@ class JoinTableCartItemsController < ApplicationController
   
       respond_to do |format|
         if @itemToAdd.save
-          format.html { redirect_to order_url(@itemToAdd), notice: "Order was successfully created." }
+          format.html { redirect_to cart_url(@itemToAdd), notice: "Item successfully added to cart." }
           format.json { render :show, status: :created, location: @itemToAdd }
         else
           format.html { render :new, status: :unprocessable_entity }

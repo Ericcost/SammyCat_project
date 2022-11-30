@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
+<% if Order.all.include?(current_user.id) %>
+  <%= render @order %>
 
-<%= render @order %>
+  <div>
+    <%= link_to "Edit this order", edit_order_path(@order) %> |
+    <%= link_to "Back to orders", orders_path %>
 
-<div>
-  <%= link_to "Edit this order", edit_order_path(@order) %> |
-  <%= link_to "Back to orders", orders_path %>
-
-  <%= button_to "Destroy this order", @order, method: :delete %>
-</div>
+    <%= button_to "Destroy this order", @order, method: :delete %>
+  </div>
+<%end%>
