@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :items
+      resources :join_table_cart_items
+      resources :join_table_order_items
+      resources :orders
+
+      root to: "users#index"
+    end
 
   resources :orders
 

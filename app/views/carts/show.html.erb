@@ -11,7 +11,7 @@
 
 <% @cart.join_table_cart_items.sort.each do |cart_item| %>
   <%= render cart_item.item %>
-  <%= button_to "Supprimer du panier", join_table_cart_item_path(cart_item.id), :method => "delete" %>
+  <%= button_to "Supprimer du panier", join_table_cart_item_path(cart_item.id), :method => "delete", params: { item_to_delete: cart_item.id }%>
   <%= link_to "Show this item", cart_item %>
 <% end %>
 

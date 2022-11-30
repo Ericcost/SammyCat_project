@@ -19,6 +19,7 @@ class JoinTableCartItemsController < ApplicationController
   
     # DELETE /orders/1 or /orders/1.json
     def destroy
+      @item_to_delete = JoinTableCartItem.find(params[:item_to_delete])
       @item_to_delete.destroy
   
       respond_to do |format|
