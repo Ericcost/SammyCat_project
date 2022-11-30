@@ -36357,3 +36357,356 @@ Processing by CartsController#index as TURBO_STREAM
 Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 2.7ms | Allocations: 6539)
 
 
+Started GET "/" for ::1 at 2022-11-30 10:31:50 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (6.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 8.8ms | Allocations: 2642)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.7ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.5ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.4ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.4ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.8ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 3.2ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.9ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.0ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.4ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.9ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.3ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.5ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.3ms | Allocations: 1359)
+  Rendered items/index.html.erb within layouts/application (Duration: 204.9ms | Allocations: 48231)
+  Rendered layout layouts/application.html.erb (Duration: 1656.4ms | Allocations: 248286)
+Completed 200 OK in 1804ms (Views: 1677.1ms | ActiveRecord: 18.7ms | Allocations: 267387)
+
+
+Started GET "/js/vendors/aos.js" for ::1 at 2022-11-30 10:31:52 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/aos.js"):
+  
+Started GET "/images/mockup-image-01.jpg" for ::1 at 2022-11-30 10:31:52 +0100
+Started GET "/js/main.js" for ::1 at 2022-11-30 10:31:52 +0100
+Started GET "/js/vendors/swiper-bundle.min.js" for ::1 at 2022-11-30 10:31:52 +0100
+Started GET "/images/iphone-mockup.png" for ::1 at 2022-11-30 10:31:53 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/swiper-bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/iphone-mockup.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/main.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+Started GET "/images/play-button.svg" for ::1 at 2022-11-30 10:31:54 +0100
+Started GET "/images/carousel-item-01.jpg" for ::1 at 2022-11-30 10:31:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/play-button.svg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/images/carousel-item-03.jpg" for ::1 at 2022-11-30 10:31:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-03.jpg"):
+  
+Started GET "/images/carousel-item-04.jpg" for ::1 at 2022-11-30 10:31:55 +0100
+Started GET "/images/video-thumb.jpg" for ::1 at 2022-11-30 10:31:55 +0100
+Started GET "/images/carousel-item-02.jpg" for ::1 at 2022-11-30 10:31:55 +0100
+Started GET "/images/carousel-item-05.jpg" for ::1 at 2022-11-30 10:31:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-05.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-04.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-02.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/video-thumb.jpg"):
+  
+Started GET "/images/mockup-image-03.jpg" for ::1 at 2022-11-30 10:31:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-03.jpg"):
+  
+Started GET "/images/mockup-image-04.jpg" for ::1 at 2022-11-30 10:31:56 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-04.jpg"):
+  
+Started GET "/images/testimonial-02.jpg" for ::1 at 2022-11-30 10:31:56 +0100
+Started GET "/images/testimonial-04.jpg" for ::1 at 2022-11-30 10:31:56 +0100
+Started GET "/images/testimonial-01.jpg" for ::1 at 2022-11-30 10:31:56 +0100
+Started GET "/images/testimonial-03.jpg" for ::1 at 2022-11-30 10:31:56 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-03.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-04.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-02.jpg"):
+  
+Started GET "/js/vendors/alpinejs.min.js" for ::1 at 2022-11-30 10:31:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/alpinejs.min.js"):
+  
+Started GET "/images/mockup-image-02.jpg" for ::1 at 2022-11-30 10:31:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-02.jpg"):
+  
+Started GET "/images/mockup-image-01.jpg" for ::1 at 2022-11-30 10:32:37 +0100
+Started GET "/images/iphone-mockup.png" for ::1 at 2022-11-30 10:32:37 +0100
+Started GET "/images/carousel-item-01.jpg" for ::1 at 2022-11-30 10:32:37 +0100
+Started GET "/images/carousel-item-03.jpg" for ::1 at 2022-11-30 10:32:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/iphone-mockup.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-03.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-01.jpg"):
+  
+Started GET "/images/carousel-item-02.jpg" for ::1 at 2022-11-30 10:32:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-02.jpg"):
+  
+Started GET "/images/play-button.svg" for ::1 at 2022-11-30 10:32:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/play-button.svg"):
+  
+Started GET "/images/carousel-item-04.jpg" for ::1 at 2022-11-30 10:32:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-04.jpg"):
+  
+Started GET "/images/carousel-item-05.jpg" for ::1 at 2022-11-30 10:32:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-05.jpg"):
+  
+Started GET "/images/mockup-image-03.jpg" for ::1 at 2022-11-30 10:32:38 +0100
+Started GET "/images/video-thumb.jpg" for ::1 at 2022-11-30 10:32:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-03.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/video-thumb.jpg"):
+  
+Started GET "/images/mockup-image-04.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+Started GET "/images/testimonial-01.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-04.jpg"):
+  
+Started GET "/images/mockup-image-02.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-02.jpg"):
+  
+Started GET "/images/testimonial-02.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+Started GET "/images/testimonial-04.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-04.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-02.jpg"):
+  
+Started GET "/images/testimonial-03.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+Started GET "/images/mockup-image-01.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-03.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-01.jpg"):
+  
+Started GET "/images/carousel-item-02.jpg" for ::1 at 2022-11-30 10:32:39 +0100
+Started GET "/images/iphone-mockup.png" for ::1 at 2022-11-30 10:32:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/iphone-mockup.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-02.jpg"):
+  
+Started GET "/images/carousel-item-01.jpg" for ::1 at 2022-11-30 10:32:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-01.jpg"):
+  
+Started GET "/images/carousel-item-03.jpg" for ::1 at 2022-11-30 10:32:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-03.jpg"):
+  
+Started GET "/" for ::1 at 2022-11-30 10:55:34 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (1.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 5.2ms | Allocations: 1868)
+  Rendered items/_item.html.erb (Duration: 1.5ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.0ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.8ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.9ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.4ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.6ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.7ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.5ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.8ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.7ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.0ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.5ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 7.0ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.9ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.1ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.7ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 2.7ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 1.3ms | Allocations: 1359)
+  Rendered items/index.html.erb within layouts/application (Duration: 66.5ms | Allocations: 30951)
+  Rendered layout layouts/application.html.erb (Duration: 105.4ms | Allocations: 42453)
+Completed 200 OK in 134ms (Views: 107.7ms | ActiveRecord: 11.5ms | Allocations: 47297)
+
+
+Started GET "/js/vendors/swiper-bundle.min.js" for ::1 at 2022-11-30 10:55:34 +0100
+Started GET "/js/vendors/aos.js" for ::1 at 2022-11-30 10:55:34 +0100
+Started GET "/images/mockup-image-01.jpg" for ::1 at 2022-11-30 10:55:34 +0100
+Started GET "/js/main.js" for ::1 at 2022-11-30 10:55:34 +0100
+Started GET "/images/play-button.svg" for ::1 at 2022-11-30 10:55:34 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/swiper-bundle.min.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/play-button.svg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/main.js"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-01.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/aos.js"):
+  
+Started GET "/images/iphone-mockup.png" for ::1 at 2022-11-30 10:55:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/iphone-mockup.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/images/carousel-item-02.jpg" for ::1 at 2022-11-30 10:55:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-02.jpg"):
+  
+Started GET "/images/carousel-item-03.jpg" for ::1 at 2022-11-30 10:55:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-03.jpg"):
+  
+Started GET "/images/carousel-item-01.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-01.jpg"):
+  
+Started GET "/images/carousel-item-04.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+Started GET "/images/carousel-item-05.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-04.jpg"):
+  
+Started GET "/images/video-thumb.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/carousel-item-05.jpg"):
+  
+Started GET "/images/mockup-image-04.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/video-thumb.jpg"):
+  
+Started GET "/images/mockup-image-03.jpg" for ::1 at 2022-11-30 10:55:37 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-04.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-03.jpg"):
+  
+Started GET "/images/testimonial-01.jpg" for ::1 at 2022-11-30 10:55:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-01.jpg"):
+  
+Started GET "/images/mockup-image-02.jpg" for ::1 at 2022-11-30 10:55:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/mockup-image-02.jpg"):
+  
+Started GET "/images/testimonial-02.jpg" for ::1 at 2022-11-30 10:55:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-02.jpg"):
+  
+Started GET "/images/testimonial-04.jpg" for ::1 at 2022-11-30 10:55:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-04.jpg"):
+  
+Started GET "/js/vendors/alpinejs.min.js" for ::1 at 2022-11-30 10:55:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/js/vendors/alpinejs.min.js"):
+  
+Started GET "/images/testimonial-03.jpg" for ::1 at 2022-11-30 10:55:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/images/testimonial-03.jpg"):
+  

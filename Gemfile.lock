@@ -250,6 +250,10 @@ GEM
       railties (>= 6.0.0)
     stripe (8.0.0)
     table_print (1.5.7)
+    tailwindcss-rails (2.0.21-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.21-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.0)
@@ -304,6 +308,7 @@ DEPENDENCIES
   stimulus-rails
   stripe (~> 8.0)
   table_print
+  tailwindcss-rails (~> 2.0)
   turbo-rails
   tzinfo-data
   web-console
@@ -313,4 +318,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.3.17
+   2.3.24
