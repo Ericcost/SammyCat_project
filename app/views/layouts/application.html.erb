@@ -46,8 +46,6 @@
       </div>
     </nav>
 
-    <%= button_to "Passer commande", checkout_create_path(total: @total), method: :post %>
-
 
     <% if current_user %>
       <%= button_to "Panier", cart_path(current_user_cart.id), method: :get, class: 'btn btn-link nav-link' %></li>
