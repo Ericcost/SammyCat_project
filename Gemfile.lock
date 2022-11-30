@@ -304,11 +304,7 @@ DEPENDENCIES
   stimulus-rails
   stripe (~> 8.0)
   table_print
-<<<<<<< HEAD
-=======
   tailwindcss-rails (~> 2.0)
-  turbo-rails
->>>>>>> 4355ffe80d8a4a5bc2fb894416fe5d36e4dc539d
   tzinfo-data
   web-console
   webdrivers
