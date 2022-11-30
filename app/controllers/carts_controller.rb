@@ -9,10 +9,10 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
-
     unless @cart.id == current_user.cart.id
       redirect_to root_path
     else
+      @total = cart_total
       @render_cart = false
       @cart_content = current_user_cart_content
     end

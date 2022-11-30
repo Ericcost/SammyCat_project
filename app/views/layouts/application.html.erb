@@ -46,7 +46,7 @@
       </div>
     </nav>
 
-    <%= button_to "Passer commande", checkout_create_path(total: 10), method: :post %>
+    <%= button_to "Passer commande", checkout_create_path(total: @total), method: :post %>
 
 
     <% if current_user %>
