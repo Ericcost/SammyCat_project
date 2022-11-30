@@ -12,28 +12,28 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/new
-  def new
-    @order = Order.new
-  end
+  # def new
+  #   @order = Order.new
+  # end
 
   # GET /orders/1/edit
   def edit
   end
 
   # POST /orders or /orders.json
-  def create
-    @order = Order.new(order_params)
+  # def create
+  #   @order = Order.new(order_params)
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @order.save
+  #       format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+  #       format.json { render :show, status: :created, location: @order }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /orders/1 or /orders/1.json
   def update
@@ -61,7 +61,9 @@ class OrdersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order
-      @order = Order.find(params[:id])
+      if Order.all.include?(current_user.id)
+        @order = Order.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @join_table_order_item %>
+
+<div>
+  <%= link_to "Edit this join table order item", edit_join_table_order_item_path(@join_table_order_item) %> |
+  <%= link_to "Back to join table order items", join_table_order_items_path %>
+
+  <%= button_to "Destroy this join table order item", @join_table_order_item, method: :delete %>
+</div>
