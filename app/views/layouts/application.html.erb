@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
@@ -44,6 +45,9 @@
         </div>
       </div>
     </nav>
+
+    <%= button_to "Passer commande", checkout_create_path(total: @total), method: :post %>
+
 
     <% if current_user %>
       <%= button_to "Panier", cart_path(current_user_cart.id), method: :get, class: 'btn btn-link nav-link' %></li>

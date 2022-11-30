@@ -14,3 +14,7 @@
   <%= button_to "Supprimer du panier", join_table_cart_item_path(cart_item.id), :method => "delete", params: { item_to_delete: cart_item.id }%>
   <%= link_to "Show this item", cart_item %>
 <% end %>
+
+<h1>Total : <%=@total%></h1>
+
+<%= button_to "Passer commande", checkout_create_path(total: @total), method: :post %>
