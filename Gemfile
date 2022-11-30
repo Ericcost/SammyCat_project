@@ -78,3 +78,5 @@ gem "stripe", "~> 8.0"
 gem "table_print"
 gem "mailjet"
 gem "administrate", "~> 0.18.0"
+
+gem "tailwindcss-rails", "~> 2.0"
