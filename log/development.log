@@ -41218,3 +41218,121 @@ Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 2.7ms | Allocations: 6539
 >>>>>>> a9bb25f56f86d646cfab361e30b4adb5d04ad165
 
 
+Started GET "/" for 127.0.0.1 at 2022-11-30 11:01:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:6
+  Rendered items/_item.html.erb (Duration: 4.7ms | Allocations: 2429)
+  Rendered items/_item.html.erb (Duration: 0.8ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 0.4ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.4ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.4ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.6ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.5ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1359)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.3ms | Allocations: 1358)
+  Rendered items/_item.html.erb (Duration: 0.2ms | Allocations: 1358)
+  Rendered items/index.html.erb within layouts/application (Duration: 45.8ms | Allocations: 47137)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered carts/_cart.html.erb (Duration: 0.3ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 289.8ms | Allocations: 203023)
+Completed 200 OK in 356ms (Views: 271.9ms | ActiveRecord: 28.2ms | Allocations: 251875)
+
+
+Started GET "/carts/1" for 127.0.0.1 at 2022-11-30 11:01:32 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:72:in `set_cart'
+  [1m[36mCart Load (2.0ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:12:in `show'
+  [1m[36mJoinTableCartItem Load (0.8ms)[0m  [1m[34mSELECT "join_table_cart_items".* FROM "join_table_cart_items" WHERE "join_table_cart_items"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/helpers/carts_helper.rb:17:in `cart_total'
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:18:in `block in cart_total'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:18:in `block in cart_total'
+  Rendering layout layouts/application.html.erb
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/_cart.html.erb (Duration: 0.3ms | Allocations: 108)
+  [1m[36mCACHE JoinTableCartItem Load (0.0ms)[0m  [1m[34mSELECT "join_table_cart_items".* FROM "join_table_cart_items" WHERE "join_table_cart_items"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/views/carts/show.html.erb:12:in `sort'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered items/_item.html.erb (Duration: 0.6ms | Allocations: 1385)
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered items/_item.html.erb (Duration: 0.7ms | Allocations: 1353)
+  Rendered carts/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 7782)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 11077)
+Completed 200 OK in 46ms (Views: 11.8ms | ActiveRecord: 7.4ms | Allocations: 40606)
+
+
+Started GET "/carts/1" for 127.0.0.1 at 2022-11-30 11:01:34 +0000
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:72:in `set_cart'
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:12:in `show'
+  [1m[36mJoinTableCartItem Load (0.3ms)[0m  [1m[34mSELECT "join_table_cart_items".* FROM "join_table_cart_items" WHERE "join_table_cart_items"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/helpers/carts_helper.rb:17:in `cart_total'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:18:in `block in cart_total'
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:18:in `block in cart_total'
+  Rendering layout layouts/application.html.erb
+  Rendering carts/show.html.erb within layouts/application
+  Rendered carts/_cart.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mCACHE JoinTableCartItem Load (0.0ms)[0m  [1m[34mSELECT "join_table_cart_items".* FROM "join_table_cart_items" WHERE "join_table_cart_items"."cart_id" = $1[0m  [["cart_id", 1]]
+  ↳ app/views/carts/show.html.erb:12:in `sort'
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered items/_item.html.erb (Duration: 0.9ms | Allocations: 1487)
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/carts/show.html.erb:13
+  Rendered items/_item.html.erb (Duration: 0.8ms | Allocations: 1353)
+  Rendered carts/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5943)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 9152)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 1.7ms | Allocations: 13643)
+
+
+Started POST "/checkout/create?total=173.0" for 127.0.0.1 at 2022-11-30 11:01:35 +0000
+Processing by CheckoutController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "total"=>"173.0"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a10EfHkLTvcICXyVXP2vcghevX9tVc7huL7suyZQhwTUi4VspZUkZ53lgh#fidkdWxOYHwnPyd1blpxYHZxWjA0SDdHaH1GUD0zbW9ySnw3PXJvSjdtZz1TT01Nbn9DbUljUEZdSEhBPV9BbGFgUE4zNzdNXWJ8aUIwbmk9dnA8Q11ERF9Vf3VLN2JJfTF1MWJISXZ9dzRINTVCfDBnQTJKRycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 719ms (ActiveRecord: 0.6ms | Allocations: 4984)
+
+
