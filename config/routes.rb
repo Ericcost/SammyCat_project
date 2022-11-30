@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   resources :join_table_cart_items
 
   devise_for :users
-  resources :user, only: [:show]
+  
+  resources :user, only: [:show] do 
+    resources :avatars, only: [:create]
+  end
 
   resources :items
 
