@@ -12,10 +12,10 @@
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 
-  <body>
+  <body class= "bg-gradient-to-l from-indigo-500">
 
        <!-- Page wrapper -->
-    <div class="flex flex-col min-h-screen overflow-hidden">
+    <div class="flex flex-col min-h-screen overflow-hidden bg-fixed" style="background-image: url(#logo_a)">
 
         <!-- Site header -->
         <header class="absolute w-full z-30">
@@ -77,10 +77,14 @@
                         </ul>
 
                     </nav>
+
                     </div>
+                    </div>
+                    </header>
+                    <br> <br>
     <%= yield %>
 
 
-
+</div>
   </body>
 </html>
