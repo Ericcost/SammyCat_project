@@ -1,10 +1,44 @@
-<p style="color: green"><%= notice %></p>
+<br><br><br>
 
-<%= render @item %>
+<div class="flex flex-col flew-wrap items-center text-center py-5">
+  <div class="w-80 bg-white shadow rounded">
+    <div class="h-48 bg-gray-200 flex-col p-4 bg-cover bg-center rounded-t-lg"
+      style="background-image: url('<%= @item.image_url %>')">
+      <div>
+        <span class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
+          available NOW !! QUANTITY LIMITED ! BLACKFRIDAY ! HURRY !
+        </span>
+      </div>
+    </div>
+    <div class="p-4 flex flex-col items-center">
+      <p class="text-gray-400 font-light text-xs text-center"><%= @item.description %></p>
+      <h1 class="text-gray-800 text-center mt-1"><%= @item.title %></h1>
+      <p class="text-center text-gray-800 mt-1"><%= @item.price %></p>
 
-<div>
-  <%= link_to "Edit this item", edit_item_path(@item) %> |
-  <%= link_to "Back to items", items_path %>
+      <form  action="/join_table_cart_items" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= @item.id%>" autocomplete="off">
+          <div class="flex flex wrap -mx-3 mb-5>
+            <div class="w-full px-3">
 
-  <%= button_to "Destroy this item", @item, method: :delete %>
+              <label class="bg-blue-100 border-t border-b border-blue-100 text-gray-600 hover:bg-blue-100 inline-flex items-center px-4 py-1 select-none" for="quantity">
+              <input id="quantity" name="quantity" type="number" class="form-input w-full" value="0" min="1" />
+
+            </div>
+          </div>
+
+          <div class="flex flex-wrap -mx-3 mb-5">
+            <div class="w-full px-3">
+
+                <%= button_to "Add to cart", join_table_cart_items_path, method: :post, params: {item_id: @item.id}, class: 'btn text-white bg-teal-500 hover:bg-teal-400 w-40 flex items-center' %> 
+              
+              
+            </div>
+            <div class="w-full px-3">
+              <%= link_to "Show this item", @item, class: "text-sm text-center" %>
+            </div>
+
+          </div>
+      </form>
+    </div>
+
 </div>

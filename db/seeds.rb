@@ -9,8 +9,8 @@
 
 20.times do
 	Item.create!(
-		title: Faker::Lorem.characters(number: rand(5..25)),
-		description: Faker::Lorem.sentence(word_count: rand(5..25)),
-		price: rand(0..100),
-		image_url: Faker::LoremFlickr.image(size: "50x60", search_terms: ['cats']))
+		title: Faker::JapaneseMedia::StudioGhibli.character,
+		description: Faker::JapaneseMedia::StudioGhibli.quote,
+		price: rand(0..100000),
+		image_url: "https://cdn.discordapp.com/attachments/1031448762956124210/1047831103026774056/776213.jpg")
 end

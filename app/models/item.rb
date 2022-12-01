@@ -9,14 +9,11 @@ has_many :orders, through: :join_table_order_items
 has_many :users, through: :orders
 	
 validates :title,
-  presence: true,
-	length: { in: 5..25 }
-
+  presence: true
 
 validates :description,
-	presence: true,
-	length: { in: 10..280 }
-
+	presence: true
+	
 validates :price,
 	presence: true,
 	numericality: { only_integer: true }
