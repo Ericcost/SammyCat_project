@@ -50845,3 +50845,473 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 117ms (Views: 69.2ms | ActiveRecord: 2.9ms | Allocations: 3338)
 
 
+Started GET "/" for 127.0.0.1 at 2022-12-01 09:21:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 2 pending migrations:
+
+20221129143012_create_active_storage_tables.active_storage.rb
+20221130111942_create_join_table_order_items.rb
+
+
+):
+  
+activerecord (7.0.4) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (48.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_development"[0m
+  [1m[35m (36.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_test"[0m
+  [1m[35m (151.5ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (37.8ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20221128094001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "image_url" character varying, "quantity" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128094001"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20221128095709)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "is_admin" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128095709"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCarts (20221128132508)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132508"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20221128132513)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132513"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCartItems (20221128132531)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "join_table_cart_items" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_cart_id" ON "join_table_cart_items" ("cart_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_item_id" ON "join_table_cart_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132531"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20221129143012)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221129143012"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableOrderItems (20221130111942)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "join_table_order_items" ("id" bigserial primary key, "order_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_order_id" ON "join_table_order_items" ("order_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_item_id" ON "join_table_order_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221130111942"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-01 09:22:19.332917"], ["updated_at", "2022-12-01 09:22:19.332917"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "ntem5xflp"], ["description", "Atque est ratione natus minima velit iste sit tempore et id quibusdam perferendis et modi culpa dolorum officia aperiam."], ["price", "74.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.200563"], ["updated_at", "2022-12-01 09:22:23.200563"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "mk62xzj9k7"], ["description", "Est enim aut doloremque praesentium repudiandae quo autem repellendus laborum quam maxime eveniet delectus laboriosam deserunt atque odit veniam perspiciatis vero dolorum enim ab voluptatem."], ["price", "65.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.203585"], ["updated_at", "2022-12-01 09:22:23.203585"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "e324222ve1"], ["description", "Enim molestias iusto aut dolor expedita odit fugit nemo sunt voluptas laudantium voluptatem explicabo quasi reprehenderit fuga adipisci consequatur qui ullam id et est."], ["price", "47.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.205327"], ["updated_at", "2022-12-01 09:22:23.205327"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "uu0ibf0s4lxv8f"], ["description", "Voluptas voluptate corporis quaerat dolor officia excepturi qui cumque quo nostrum sit ut sed possimus dolorem doloribus at ut earum sint molestiae dolores."], ["price", "84.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.206784"], ["updated_at", "2022-12-01 09:22:23.206784"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.1ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "5llb9l0u7848a5rhisot4s0g"], ["description", "Voluptatem et sapiente ex ut quia est vero harum consequatur veritatis explicabo repudiandae voluptatibus omnis non non reprehenderit dolorum."], ["price", "17.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.208256"], ["updated_at", "2022-12-01 09:22:23.208256"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "ny2b0ddjwpyv0h"], ["description", "Porro consectetur pariatur quidem maxime assumenda cupiditate praesentium at vel quo voluptatem inventore eveniet labore quod facere."], ["price", "16.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.209689"], ["updated_at", "2022-12-01 09:22:23.209689"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "86vup5b3crr67e5c"], ["description", "Soluta omnis similique qui illo deleniti necessitatibus sed aliquid architecto nam doloremque consequatur natus dolores ipsam voluptatum ab ipsa."], ["price", "54.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.211157"], ["updated_at", "2022-12-01 09:22:23.211157"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "tzhuo2q9z40e4eptf"], ["description", "Autem et et quia dolor maxime soluta eveniet nobis labore ipsam molestias voluptatem dolorem voluptatibus numquam aut sit qui occaecati."], ["price", "84.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.212859"], ["updated_at", "2022-12-01 09:22:23.212859"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "u31x0b9ze"], ["description", "Eum cum minus nihil qui similique velit est cumque harum dolores deserunt tempora voluptatibus modi debitis excepturi dolorem."], ["price", "67.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.214584"], ["updated_at", "2022-12-01 09:22:23.214584"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "oj69uf987e2f60tlegzh"], ["description", "Quasi aliquam dicta eligendi sint omnis recusandae ut accusamus itaque pariatur quidem quo totam."], ["price", "4.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.216058"], ["updated_at", "2022-12-01 09:22:23.216058"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "tv3aj452bq5r"], ["description", "Modi quia ullam omnis provident illo minus magnam quidem et officia molestiae est nostrum explicabo molestias veritatis reiciendis dolor eum tempora quisquam."], ["price", "62.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.217468"], ["updated_at", "2022-12-01 09:22:23.217468"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "bfpwtnw"], ["description", "Aut voluptatem sunt assumenda maiores illo dolor ipsam dicta nam quo enim optio id nihil quae distinctio et facere iste ex omnis."], ["price", "88.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.218922"], ["updated_at", "2022-12-01 09:22:23.218922"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "7ohv6qe4am"], ["description", "Ut quia delectus quidem nobis quasi corrupti ea fuga in molestiae."], ["price", "17.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.220384"], ["updated_at", "2022-12-01 09:22:23.220384"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "a3zun"], ["description", "Enim asperiores aperiam quia cupiditate iure sunt dolore non ut eius a dolorum et quas id incidunt pariatur sit reprehenderit magni."], ["price", "63.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.221898"], ["updated_at", "2022-12-01 09:22:23.221898"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "2ueo7rhoslee7xn8nmqo"], ["description", "Iusto molestiae ut provident enim repellat velit sint itaque deserunt autem culpa repudiandae."], ["price", "26.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.223402"], ["updated_at", "2022-12-01 09:22:23.223402"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "lexivu31fmdkno9mx3dy"], ["description", "Ea quia eligendi maxime quaerat consectetur soluta reiciendis qui ex consequatur voluptatem dolorem repellat doloremque."], ["price", "78.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.225053"], ["updated_at", "2022-12-01 09:22:23.225053"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "wkfdwz6fw"], ["description", "Laboriosam ut labore pariatur asperiores et odit minus dolorem ipsam eos quo voluptatem vel est ipsa fuga placeat recusandae dolor."], ["price", "30.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.226587"], ["updated_at", "2022-12-01 09:22:23.226587"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "56lyw7ph52wcot08urbb0"], ["description", "Labore ut molestiae minus tempore animi sed nemo vel aspernatur consequatur sint quibusdam pariatur deleniti facilis dolorum voluptas aut impedit unde dolorem cumque."], ["price", "34.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.228100"], ["updated_at", "2022-12-01 09:22:23.228100"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "fgzt1i9nb2faaf1v7"], ["description", "Similique aut eum explicabo sit reiciendis ut."], ["price", "72.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.229613"], ["updated_at", "2022-12-01 09:22:23.229613"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.2ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "n5wduuljuir1tacxso4rh"], ["description", "Ut qui eligendi et itaque ab nemo est exercitationem odit laboriosam distinctio non voluptatibus qui."], ["price", "67.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:22:23.231139"], ["updated_at", "2022-12-01 09:22:23.231139"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2022-12-01 09:22:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 17936)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 296.5ms | Allocations: 228312)
+Completed 200 OK in 380ms (Views: 294.9ms | ActiveRecord: 23.2ms | Allocations: 248620)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+Started GET "/" for 127.0.0.1 at 2022-12-01 14:49:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 18041)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 25973)
+Completed 200 OK in 84ms (Views: 14.8ms | ActiveRecord: 11.6ms | Allocations: 43473)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 14:49:30 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 849)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 196.8ms | Allocations: 347125)
+  Rendered layout layouts/application.html.erb (Duration: 197.5ms | Allocations: 348236)
+Completed 200 OK in 220ms (Views: 200.0ms | ActiveRecord: 5.9ms | Allocations: 366514)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-01 14:49:33 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1392)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 3393)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 14:49:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2276)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 3604)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-01 14:49:51 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1083)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 2313)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-12-01 14:49:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2276)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 3582)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-12-01 14:49:54 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1083)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 2337)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
