@@ -3,7 +3,7 @@ class JoinTableCartItemsController < ApplicationController
 
     # POST /orders or /orders.json
     def create
-      @itemToAdd = JoinTableCartItem.new(cart_id: current_user.cart.id, item_id: params[:id])
+      @itemToAdd = JoinTableCartItem.new(cart_id: current_user.cart.id, item_id: params[:item_id])
   
       respond_to do |format|
         if @itemToAdd.save

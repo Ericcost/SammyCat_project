@@ -76,6 +76,17 @@
                         <% end %>
                         </ul>
 
+                        <ul class="flex justify-end flex-wrap items-center">
+                            <% if current_user %>
+                                <% if current_user.is_admin %>
+                                    <li>
+                                        <%= button_to "Dashboard", admin_root_path, method: :get, class: 'btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6' %></a>
+                                    </li>
+                                    
+                                <% end %>
+                            <% end %>
+                        </ul>
+
                     </nav>
 
                     </div>

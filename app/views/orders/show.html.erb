@@ -1,11 +1,13 @@
+<br><br><br><br><br>
 <p style="color: green"><%= notice %></p>
-<% if Order.all.include?(current_user.id) %>
-  <%= render @order %>
+<% unless Order.all.where(user_id: current_user.id).empty? %>
+  <% @order.join_table_order_items.each do |order|%>
+    <%= "Title: " + order.item.title + "."%>
+    <br>
+    <br>
+  <% end %>
 
   <div>
-    <%= link_to "Edit this order", edit_order_path(@order) %> |
-    <%= link_to "Back to orders", orders_path %>
-
-    <%= button_to "Destroy this order", @order, method: :delete %>
+    <%= button_to "Back to profil", user_path(current_user.id), method: :get %>
   </div>
 <%end%>
