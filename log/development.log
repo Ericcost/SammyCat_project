@@ -50845,3 +50845,834 @@ Processing by ItemsController#index as HTML
 Completed 200 OK in 117ms (Views: 69.2ms | ActiveRecord: 2.9ms | Allocations: 3338)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (31.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_development"[0m
+  [1m[35m (21.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SammyCat_project_test"[0m
+  [1m[35m (153.9ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_development" ENCODING = 'unicode'[0m
+  [1m[35m (68.9ms)[0m  [1m[35mCREATE DATABASE "SammyCat_project_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20221128094001)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "title" character varying, "description" text, "price" decimal, "image_url" character varying, "quantity" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128094001"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20221128095709)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "is_admin" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128095709"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCarts (20221128132508)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "carts" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132508"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateOrders (20221128132513)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "user_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132513"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableCartItems (20221128132531)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "join_table_cart_items" ("id" bigserial primary key, "cart_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_cart_id" ON "join_table_cart_items" ("cart_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_join_table_cart_items_on_item_id" ON "join_table_cart_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221128132531"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActiveStorageTables (20221129143012)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221129143012"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateJoinTableOrderItems (20221130111942)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "join_table_order_items" ("id" bigserial primary key, "order_id" bigint, "item_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_order_id" ON "join_table_order_items" ("order_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_join_table_order_items_on_item_id" ON "join_table_order_items" ("item_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221130111942"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-01 09:07:10.915418"], ["updated_at", "2022-12-01 09:07:10.915418"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6537502255305855120)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "2qkuurkm"], ["description", "Rem aut quam possimus dolor commodi blanditiis omnis dolores similique necessitatibus minus cumque voluptas saepe consequatur tempore non sapiente ab autem qui delectus."], ["price", "36.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.456562"], ["updated_at", "2022-12-01 09:07:13.456562"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "suigfz5ryq42yj9"], ["description", "Reiciendis et voluptates dicta sit."], ["price", "16.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.463925"], ["updated_at", "2022-12-01 09:07:13.463925"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "s2h7kjtvydh9ys4rk"], ["description", "Repellat dolorem magnam totam adipisci eum molestiae enim unde recusandae minima omnis repudiandae est asperiores perferendis illo numquam dolores praesentium fugit."], ["price", "63.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.469826"], ["updated_at", "2022-12-01 09:07:13.469826"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "qiowwi53ya13cwl"], ["description", "Iure a nemo rerum sit deserunt expedita cumque voluptatem laborum modi cupiditate dolores suscipit ut vero adipisci ea quis ut officia."], ["price", "87.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.476212"], ["updated_at", "2022-12-01 09:07:13.476212"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "u7eq5024jsnu5o4"], ["description", "Debitis et delectus reprehenderit placeat minima iure fuga blanditiis nisi et voluptatem."], ["price", "24.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.481199"], ["updated_at", "2022-12-01 09:07:13.481199"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "8if1m45v8xxijctilz"], ["description", "Exercitationem at sit reprehenderit minima vero voluptatem facilis dignissimos dolores tempore modi labore est temporibus quo voluptate ut ipsam quis."], ["price", "6.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.488610"], ["updated_at", "2022-12-01 09:07:13.488610"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "zd6dkgdp5f4b87djdl00px"], ["description", "Occaecati corporis error accusantium culpa et dolorem cum qui repellendus sit exercitationem."], ["price", "55.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.494865"], ["updated_at", "2022-12-01 09:07:13.494865"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "v8884jk7chmfcd"], ["description", "Quam sint ex officiis voluptatem maiores nisi et magni tempora atque dolorum et ut quos rerum ipsam."], ["price", "26.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.502946"], ["updated_at", "2022-12-01 09:07:13.502946"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "2scd3gwysjwkg7rx8rp5"], ["description", "Est commodi id ea fugiat exercitationem."], ["price", "8.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.511526"], ["updated_at", "2022-12-01 09:07:13.511526"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "gha5i0wr2ozrnyhc"], ["description", "Ab nostrum dignissimos atque aut consequuntur et neque nemo placeat occaecati quis error rerum alias facere assumenda officiis numquam asperiores a."], ["price", "64.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.518441"], ["updated_at", "2022-12-01 09:07:13.518441"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "9wlb9j04c2kjas2c1hdpksl"], ["description", "Voluptatem ut beatae voluptas nihil."], ["price", "37.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.525462"], ["updated_at", "2022-12-01 09:07:13.525462"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "c0cf752"], ["description", "Error perspiciatis commodi nam adipisci ut ducimus molestias unde."], ["price", "57.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.533448"], ["updated_at", "2022-12-01 09:07:13.533448"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "hi34rsql5vzdlme3b"], ["description", "Est vel rerum facere saepe dolorem necessitatibus ad dolorum ex dolor eos dolore."], ["price", "57.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.540289"], ["updated_at", "2022-12-01 09:07:13.540289"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "bhjwz4pf"], ["description", "Qui assumenda dolore dignissimos voluptatem aut eaque ut rerum nostrum tenetur dolorem est atque reiciendis delectus labore aut id cupiditate reprehenderit blanditiis nihil quisquam quidem."], ["price", "86.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.546016"], ["updated_at", "2022-12-01 09:07:13.546016"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.4ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "sppblbcjn6g2d1u6l5nhun"], ["description", "Temporibus et atque sint perspiciatis voluptatum et molestiae eum commodi at reiciendis aut illum alias eveniet labore et vel aperiam fugiat pariatur odit quod."], ["price", "31.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.552994"], ["updated_at", "2022-12-01 09:07:13.552994"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "sarz0eph"], ["description", "Consectetur et ut repudiandae rerum odit magnam cupiditate ab praesentium suscipit provident necessitatibus et architecto facilis quia voluptatum sapiente omnis inventore totam."], ["price", "13.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.560407"], ["updated_at", "2022-12-01 09:07:13.560407"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "3uc26vwk04eipusbmirh888"], ["description", "Adipisci itaque reprehenderit magnam sequi modi temporibus doloremque quibusdam deserunt dolor culpa ipsam officiis quasi omnis quia sint est nemo sit voluptate."], ["price", "0.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.565371"], ["updated_at", "2022-12-01 09:07:13.565371"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "p7u23qo2yqgiqjnt378u0s2"], ["description", "Consectetur inventore ad minima sapiente error voluptatem est eaque laborum quidem ullam deserunt sed velit sint eos."], ["price", "46.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.571530"], ["updated_at", "2022-12-01 09:07:13.571530"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "is1ketv0hi"], ["description", "Ut fuga exercitationem debitis beatae laboriosam inventore ea reprehenderit quia ex qui quidem ab eaque atque."], ["price", "58.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.576884"], ["updated_at", "2022-12-01 09:07:13.576884"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "description", "price", "image_url", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "vobb0njyuuaxrlanypu1q4wck"], ["description", "Nihil tempore ratione omnis quia est autem inventore qui expedita quaerat."], ["price", "36.0"], ["image_url", "https://loremflickr.com/50/60/cats"], ["quantity", nil], ["created_at", "2022-12-01 09:07:13.582718"], ["updated_at", "2022-12-01 09:07:13.582718"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-12-01 10:08:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 161.3ms | Allocations: 17992)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 176.8ms | Allocations: 25715)
+Completed 200 OK in 280ms (Views: 182.6ms | ActiveRecord: 13.3ms | Allocations: 47091)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+Started GET "/" for ::1 at 2022-12-01 10:08:05 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2188)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 1.7ms | Allocations: 3208)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:09:23 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 842)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 440.3ms | Allocations: 347579)
+  Rendered layout layouts/application.html.erb (Duration: 443.3ms | Allocations: 348690)
+Completed 200 OK in 472ms (Views: 445.6ms | ActiveRecord: 0.3ms | Allocations: 366338)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:09:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2276)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 3480)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:09:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1389)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 3239)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:09:32 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1083)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 2208)
+
+
+Started POST "/users" for ::1 at 2022-12-01 10:09:55 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"yip@yopmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yip@yopmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "is_admin", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "yip@yopmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["is_admin", false], ["created_at", "2022-12-01 09:09:55.534711"], ["updated_at", "2022-12-01 09:09:55.534711"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 305ms (ActiveRecord: 2.5ms | Allocations: 9569)
+
+
+Started GET "/" for ::1 at 2022-12-01 10:09:55 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mCart Create (0.5ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2022-12-01 09:09:55.602437"], ["updated_at", "2022-12-01 09:09:55.602437"]]
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1132)
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3902)
+Completed 200 OK in 55ms (Views: 9.7ms | ActiveRecord: 5.8ms | Allocations: 27659)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 10:09:56 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (2.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1132)
+  [1m[36mCart Load (1.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 3008)
+Completed 200 OK in 44ms (Views: 26.1ms | ActiveRecord: 5.4ms | Allocations: 4666)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-12-01 10:12:35 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 1.6ms | Allocations: 5124)
+
+
+Started GET "/" for ::1 at 2022-12-01 10:12:35 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2196)
+Completed 200 OK in 12ms (Views: 6.5ms | ActiveRecord: 0.8ms | Allocations: 3378)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 10:12:36 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1132)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2188)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.7ms | Allocations: 3352)
+
+
+Started POST "/join_table_cart_items" for ::1 at 2022-12-01 10:12:41 +0100
+Processing by JoinTableCartItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "quantity"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 895)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:13:01 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1083)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 2334)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:13:02 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1083)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.4ms | Allocations: 2362)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:13:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.6ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2276)
+Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 0.6ms | Allocations: 3595)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:13:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.5ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 138)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 2276)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 3589)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-12-01 10:13:20 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"yip@yopmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "yip@yopmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2022-12-01 09:13:20.467455"], ["updated_at", "2022-12-01 09:13:20.467906"], ["id", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mCart Create (0.4ms)[0m  [1m[32mINSERT INTO "carts" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2022-12-01 09:13:20.481022"], ["updated_at", "2022-12-01 09:13:20.481022"]]
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:17:in `initialize_cart'
+Redirected to http://localhost:3000/
+Completed 302 Found in 307ms (ActiveRecord: 4.3ms | Allocations: 10027)
+
+
+Started GET "/" for ::1 at 2022-12-01 10:13:20 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1132)
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3012)
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 1.5ms | Allocations: 4700)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 10:13:21 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1132)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3008)
+Completed 200 OK in 17ms (Views: 10.2ms | ActiveRecord: 1.9ms | Allocations: 4698)
+
+
+Started POST "/join_table_cart_items" for ::1 at 2022-12-01 10:13:28 +0100
+Processing by JoinTableCartItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "quantity"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 763)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/user/1" for ::1 at 2022-12-01 10:19:45 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:6
+  Rendered user/show.html.erb within layouts/application (Duration: 22.8ms | Allocations: 6234)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 8170)
+Completed 200 OK in 78ms (Views: 28.8ms | ActiveRecord: 20.3ms | Allocations: 14394)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/user/1" for ::1 at 2022-12-01 10:19:46 +0100
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `initialize_cart'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "avatar"], ["LIMIT", 1]]
+  ↳ app/views/user/show.html.erb:6
+  Rendered user/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1177)
+  [1m[36mCart Load (0.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/carts_helper.rb:5:in `current_user_cart'
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3014)
+Completed 200 OK in 22ms (Views: 12.6ms | ActiveRecord: 2.1ms | Allocations: 5164)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
