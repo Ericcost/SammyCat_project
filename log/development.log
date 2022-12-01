@@ -51468,3 +51468,139 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 19ms (Views: 12.6ms | ActiveRecord: 0.4ms | Allocations: 2396)
 
 
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:40:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (0.9ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 540)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 7949)
+Completed 200 OK in 182ms (Views: 55.6ms | ActiveRecord: 20.5ms | Allocations: 37044)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2022-12-01 10:40:44 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mCart Load (4.7ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 1075)
+Completed 200 OK in 82ms (Views: 38.9ms | ActiveRecord: 4.7ms | Allocations: 2406)
+
+
+Started GET "/" for ::1 at 2022-12-01 10:40:47 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (2.8ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (4.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 16648)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 17808)
+Completed 200 OK in 84ms (Views: 36.1ms | ActiveRecord: 12.8ms | Allocations: 25505)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/" for ::1 at 2022-12-01 10:40:50 +0100
+Processing by ItemsController#index as HTML
+  [1m[36mCart Load (2.3ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (14.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/items/index.html.erb:2
+  Rendered items/index.html.erb within layouts/application (Duration: 47.1ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 78.5ms | Allocations: 2185)
+Completed 200 OK in 104ms (Views: 66.5ms | ActiveRecord: 16.6ms | Allocations: 3360)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:40:54 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (0.4ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 245)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 1389)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 0.4ms | Allocations: 3371)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/base"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/components"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/toggle-switch.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/utility-patterns.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/range-slider.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/tailwindcss/utilities"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/assets/additional-styles/theme.css"):
+  
+Started GET "/users/sign_up" for ::1 at 2022-12-01 10:40:57 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mCart Load (1.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts" WHERE "carts"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `initialize_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 39)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 1083)
+Completed 200 OK in 35ms (Views: 19.1ms | ActiveRecord: 1.1ms | Allocations: 2329)
+
+
