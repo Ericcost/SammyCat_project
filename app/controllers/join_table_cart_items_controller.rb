@@ -10,7 +10,7 @@ class JoinTableCartItemsController < ApplicationController
           format.html { redirect_to cart_url(@itemToAdd), notice: "Item successfully added to cart." }
           format.json { render :show, status: :created, location: @itemToAdd }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { redirect_to root_path, status: :unprocessable_entity }
           format.json { render json: @itemToAdd.errors, status: :unprocessable_entity }
         end
       end
