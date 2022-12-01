@@ -49,7 +49,7 @@
                         <!-- Desktop menu links -->
                         <ul class="flex grow flex-wrap items-center font-medium">
                             <li>
-                                <%= button_to "Acceuil", root_path,  method: :get, class: 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out' %></a>
+                                <%= button_to "Accueil", root_path,  method: :get, class: 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out' %></a>
                             </li>
                             <% if current_user %>
                             <li>    
@@ -74,6 +74,17 @@
                                 <%= button_to "Panier", cart_path(current_user_cart.id), method: :get, class: 'btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6' %></a>
                             </li>
                         <% end %>
+                        </ul>
+
+                        <ul class="flex justify-end flex-wrap items-center">
+                            <% if current_user %>
+                                <% if current_user.is_admin %>
+                                    <li>
+                                        <%= button_to "Dashboard", admin_root_path, method: :get, class: 'btn-sm text-white bg-teal-500 hover:bg-teal-400 ml-6' %></a>
+                                    </li>
+                                    
+                                <% end %>
+                            <% end %>
                         </ul>
 
                     </nav>

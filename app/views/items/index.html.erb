@@ -22,12 +22,12 @@
           <h1 class="text-gray-800 text-center mt-1"><%= item.title %></h1>
           <p class="text-center text-gray-800 mt-1"><%= item.price %></p>
 
-          <form class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center" action="/join_table_cart_items" method="POST">
+          <form  action="/join_table_cart_items" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= item.id%>" autocomplete="off">
               <div class="flex flex wrap -mx-3 mb-5>
                 <div class="w-full px-3">
 
-                  <label class="bg-gray-100 border-t border-b border-gray-100 text-gray-600 hover:bg-gray-100 inline-flex items-center px-4 py-1 select-none" for="quantity">Quantity</label>
+                  <label class="bg-blue-100 border-t border-b border-blue-100 text-gray-600 hover:bg-blue-100 inline-flex items-center px-4 py-1 select-none" for="quantity">
                   <input id="quantity" name="quantity" type="number" class="form-input w-full" value="0" min="1" />
 
                 </div>
@@ -35,10 +35,12 @@
 
               <div class="flex flex-wrap -mx-3 mb-5">
                 <div class="w-full px-3">
-                  <button class="btn text-white bg-teal-500 hover:bg-teal-400 w-40 flex items-center">
-                    <span>Add to Cart</span>
-                  </button>
+
+                    <%= button_to "Add to cart", join_table_cart_items_path, method: :post, params: {item_id: item.id}, class: 'btn text-white bg-teal-500 hover:bg-teal-400 w-40 flex items-center' %> 
+                  
+                   
                 </div>
+                <%= link_to "Show this item", item, class: "text-sm text-center" %>
               </div>
           </form>
         </div>
@@ -46,5 +48,21 @@
     </div>
   <% end %>
 </div>
+
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Items</h1>
+
+<div id="items">
+  <% @items.each do |item| %>
+    <%= render item %>
+    <p>
+      <%= link_to "Show this item", item %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New item", new_item_path %>
 
 
