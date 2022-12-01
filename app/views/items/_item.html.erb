@@ -9,12 +9,6 @@
     <%= item.price %>
     <strong>Image url:</strong>
     <%= item.image_url %>
-    <%= form_with(url: join_table_cart_items_path, method: :post) do |f| %>
-      <%= f.hidden_field :id, value: item.id %>
-      <%= f.number_field :quantity, value: 0, min: 1 %>
-      <%= f.submit "Add to Cart" %>
-    
-    <% end %>
   </div>
 
 </div>

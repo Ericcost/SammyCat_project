@@ -3,17 +3,18 @@ class JoinTableCartItemsController < ApplicationController
 
     # POST /orders or /orders.json
     def create
-      @itemToAdd = JoinTableCartItem.new(cart_id: current_user.cart.id, item_id: params[:item_id])
-  
+
+      @itemToAdd = JoinTableCartItem.new(cart_id: current_user.cart.id, item_id: params[:item_id], quantity: params[:quantity])
       respond_to do |format|
         if @itemToAdd.save
-          format.html { redirect_to cart_url(@itemToAdd), notice: "Item successfully added to cart." }
+          format.html { redirect_to root_path, notice: "Item successfully added to cart." }
           format.json { render :show, status: :created, location: @itemToAdd }
         else
           format.html { redirect_to root_path, status: :unprocessable_entity }
           format.json { render json: @itemToAdd.errors, status: :unprocessable_entity }
         end
       end
+
     end
 
   

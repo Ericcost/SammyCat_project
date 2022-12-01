@@ -3,6 +3,7 @@
 <% unless Order.all.where(user_id: current_user.id).empty? %>
   <% @order.join_table_order_items.each do |order|%>
     <%= "Title: " + order.item.title + "."%>
+    <%= "Quantité : #{order.quantity}" %>
     <br>
     <br>
   <% end %>

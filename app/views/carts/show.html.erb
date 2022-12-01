@@ -1,3 +1,4 @@
+<br>
 <p style="color: green"><%= notice %></p>
 
 <%= render @cart %>
@@ -7,14 +8,18 @@
   <%= link_to "Back to carts", carts_path %>
 
   <%= button_to "Destroy this cart", @cart, method: :delete %>
+  <br>
 </div>
 
 <% @cart.join_table_cart_items.sort.each do |cart_item| %>
   <%= render cart_item.item %>
+  <%= "Quantité: #{cart_item.quantity}" %>
   <%= button_to "Supprimer du panier", join_table_cart_item_path(cart_item.id), :method => "delete", params: { item_to_delete: cart_item.id }%>
   <%= link_to "Show this item", cart_item %>
+  <br>
 <% end %>
 
 <h1>Total : <%=@total%></h1>
+<br>
 
 <%= button_to "Passer commande", checkout_create_path(total: @total), method: :post %>
