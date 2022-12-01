@@ -54,7 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_111942) do
     t.text "description"
     t.decimal "price"
     t.string "image_url"
-    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_111942) do
   create_table "join_table_cart_items", force: :cascade do |t|
     t.bigint "cart_id"
     t.bigint "item_id"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_join_table_cart_items_on_cart_id"
@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_111942) do
   create_table "join_table_order_items", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "item_id"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_join_table_order_items_on_item_id"

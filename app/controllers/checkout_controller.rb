@@ -27,7 +27,7 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     new_order = Order.create(user_id: current_user.id)
     current_user_cart_content.each do |cart_item|
-      JoinTableOrderItem.create(order_id: new_order.id, item_id: cart_item.id)
+      JoinTableOrderItem.create(order_id: new_order.id, item_id: cart_item.id, quantity: cart_item.quantity)
     end
     JoinTableCartItem.where(cart_id: current_user_cart.id).destroy_all
   end

@@ -15,7 +15,7 @@ module CartsHelper
   def cart_total
     @total = 0
     current_user_cart_content.each do |cart_item|
-      @total = @total + Item.find(cart_item.item_id).price
+      @total = @total + (Item.find(cart_item.item_id).price * cart_item.quantity)
     end
     return @total
   end
